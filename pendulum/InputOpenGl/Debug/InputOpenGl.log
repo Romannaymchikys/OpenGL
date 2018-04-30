@@ -1,0 +1,5 @@
+﻿  MoveBalans.cpp
+c:\users\roman\desktop\intputopengl\inputopengl\movebalans.h(68): warning C4244: 'return': conversion from 'const double' to 'std::size_t', possible loss of data
+c:\users\roman\desktop\intputopengl\inputopengl\movebalans.h(88): warning C4800: 'double': forcing value to bool 'true' or 'false' (performance warning)
+  InputOpenGl.vcxproj -> C:\Users\Roman\Desktop\IntputOpenGl\Debug\InputOpenGl.exe
+  InputOpenGl.vcxproj -> C:\Users\Roman\Desktop\IntputOpenGl\Debug\InputOpenGl.pdb (Full PDB)
