@@ -1,5 +1,10 @@
-﻿  MoveBalans.cpp
-c:\users\roman\desktop\inputopengl - копия\inputopengl\movebalans.h(72): warning C4244: 'return': conversion from 'const double' to 'std::size_t', possible loss of data
-c:\users\roman\desktop\inputopengl - копия\inputopengl\movebalans.h(94): warning C4800: 'double': forcing value to bool 'true' or 'false' (performance warning)
-  InputOpenGl.vcxproj -> C:\Users\Roman\Desktop\InputOpenGl - копия\Debug\InputOpenGl.exe
-  InputOpenGl.vcxproj -> C:\Users\Roman\Desktop\InputOpenGl - копия\Debug\InputOpenGl.pdb (Full PDB)
+﻿  InputOpenGl.cpp
+c:\users\roman\desktop\thread (in the future a stretch thread)\inputopengl\movebalans.h(72): warning C4244: 'return': conversion from 'const double' to 'std::size_t', possible loss of data
+c:\users\roman\desktop\thread (in the future a stretch thread)\inputopengl\movebalans.h(94): warning C4800: 'double': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\roman\desktop\thread (in the future a stretch thread)\inputopengl\inputopengl.cpp(182): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\roman\desktop\thread (in the future a stretch thread)\inputopengl\inputopengl.cpp(183): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\roman\desktop\thread (in the future a stretch thread)\inputopengl\inputopengl.cpp(188): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\roman\desktop\thread (in the future a stretch thread)\inputopengl\inputopengl.cpp(189): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\roman\desktop\thread (in the future a stretch thread)\inputopengl\inputopengl.cpp(243): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  InputOpenGl.vcxproj -> C:\Users\Roman\Desktop\thread (in the future a stretch thread)\Debug\InputOpenGl.exe
+  InputOpenGl.vcxproj -> C:\Users\Roman\Desktop\thread (in the future a stretch thread)\Debug\InputOpenGl.pdb (Full PDB)

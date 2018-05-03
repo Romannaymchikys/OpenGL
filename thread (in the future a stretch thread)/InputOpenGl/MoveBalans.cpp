@@ -66,8 +66,6 @@ double  MoveBalans::calculationAngleGravity(const double leghtX,
 	}
 }
 
-
-
 template <typename T>
 T angleStartChange(const T value) {
 	return value;
@@ -86,13 +84,11 @@ auto angleStartChange(const _First first, _MyTypes ... arg) {
 			else if (counter == 1) {
 				narrative = angleGravity > 0? true : false;
 			}
-			
 			angleSpeed = 0;
 			plusSpeed = 0;
 			angleGravity = 0;
 			speed = 0;
-			counter = counter == 1 ? counter = 4 : counter = 1;
-			
+			counter = counter == 1 ? counter = 4 : counter = 1;	
 		}
 		else if (narrative && counter == 4) {
 			counter = 1;
@@ -108,8 +104,6 @@ auto angleStartChange(const _First first, _MyTypes ... arg) {
 			++counter;
 		}
 		else { --counter; }
-	
-	
 		angleStart = abs(abs(90 - angleStart) - 90);
 	
 	}
@@ -134,25 +128,19 @@ void MoveBalans::countingDataToMove(const short index) {
 		//narrative = angleStart < angleStart - (angleStartChange(angleSpeed, angleGravity) * index)? false:true;
 		lastAngleStart = angleStart;
 		 double a = (angleStartChange(angleSpeed, angleGravity) * index);
-
 		 angleStart = angleStart - a;
-		
-
 		speed += plusSpeed;
-		// нужен свич с индексами
-		
+		// нужен свич с индексами	
 		calcCoordinat(vecIndex.at(counter - 1), subjectCoordinats.first,
 			subjectCoordinats.second);
-		// переходи вcледующюю четверть
-		
+		// переходи вcледующюю четверть	
 		transition();                
 	}
 	// просмотреть обратное движение 
 	else {
 		// расмотреть точку остоновки
 		angleSpeed -= angleGravity;
-		angleStart = angleStart - (angleStartChange(angleSpeed) * index * -1);
-		
+		angleStart = angleStart - (angleStartChange(angleSpeed) * index * -1);	
 		if (angleSpeed <= 0) {
 			narrative = narrative ? false : true;
 			speed = 0;

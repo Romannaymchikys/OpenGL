@@ -9,6 +9,9 @@
 #include "MoveBalans.h"
 #include <cstdlib>
 #include <ctime>
+#define COUNT 80
+#define RADIUS 0.01
+#define START_ANGLE 80
 //Ссылка на поврхность рисование на которой все будет рисоватся
 HDC hDC;
 //Ссылка на OpenGL через кторую будем передовать пораметор
@@ -166,7 +169,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 void display(std::vector<MoveBalans>& mBalans)
 {
 	mBalans.at(0).calculationAngleBag();
-	for (size_t i(1); i < 80; ++i) {
+	for (size_t i(1); i < COUNT; ++i) {
 		mBalans.at(i).setCouplPOS_X(mBalans.at(i - 1).getSubjectPOS_X());
 		mBalans.at(i).setCouplPOS_Y(mBalans.at(i - 1).getSubjectPOS_Y());
 		mBalans.at(i).calculationAngleBag();
@@ -180,7 +183,7 @@ void display(std::vector<MoveBalans>& mBalans)
 	glVertex2f(mBalans.at(0).getSubjectPOS_X() / aspectRatio.width * aspectRatio.height, mBalans.at(0).getSubjectPOS_Y());
 	
 
-	for (size_t i(1); i < 80; ++i) {
+	for (size_t i(1); i < COUNT; ++i) {
 		
 		glVertex2f(mBalans.at(i).getCouplPOS_X() / aspectRatio.width * aspectRatio.height, mBalans.at(i).getCouplPOS_Y());
 		glVertex2f(mBalans.at(i).getSubjectPOS_X() / aspectRatio.width * aspectRatio.height, mBalans.at(i).getSubjectPOS_Y());
@@ -211,16 +214,16 @@ void display(std::vector<MoveBalans>& mBalans)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	static MoveBalans mBal(5, 0.01, 0, 0, 1, 1);
+	static MoveBalans mBal(START_ANGLE, RADIUS, 0, 0, 1, 1);
 	static  bool counter = true;
 	static std::vector<MoveBalans> mBalans;
 	
 	if(counter)
 	{
 		mBalans.push_back(mBal);
-		for (size_t i(0); i < 80; ++i) {
+		for (size_t i(0); i < COUNT; ++i) {
 
-			MoveBalans mBalansTwo(85, 0.01, mBalans.at(i).getSubjectPOS_X(), mBalans.at(i).getSubjectPOS_Y(), 1, 1);
+			MoveBalans mBalansTwo(START_ANGLE, RADIUS, mBalans.at(i).getSubjectPOS_X(), mBalans.at(i).getSubjectPOS_Y(), 1, 1);
 			mBalans.push_back(mBalansTwo);
 		}
 	} 
@@ -231,8 +234,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		counter = false;
 		mBalans.at(0).calcFirstCoordinat();
 		mBalans.at(0).calculationAngleBag();
-		for (size_t i(1); i < 80; ++i) {
-			mBalans.at(i).setCouplPOS_X(mBalans.at(i -1 ).getSubjectPOS_X());
+		for (size_t i(1); i < COUNT; ++i) {
+			mBalans.at(i).setCouplPOS_X(mBalans.at(i - 1).getSubjectPOS_X());
 			mBalans.at(i).setCouplPOS_Y(mBalans.at(i - 1).getSubjectPOS_Y());
 			mBalans.at(i).calcFirstCoordinat();
 			mBalans.at(i).calculationAngleBag();
